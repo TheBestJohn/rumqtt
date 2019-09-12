@@ -57,7 +57,7 @@ pub struct MqttOptions {
     /// connection method
     ca: Option<Vec<u8>>,
     client_auth: Option<(Vec<u8>, Vec<u8>)>,
-    alpn: Option<Vec<Vec<u8>>>,
+    //alpn: Option<Vec<Vec<u8>>>,
     /// proxy
     proxy: Proxy,
     /// reconnection options
@@ -89,7 +89,7 @@ impl Default for MqttOptions {
             connection_timeout: Duration::from_secs(10),
             ca: None,
             client_auth: None,
-            alpn: None,
+            //alpn: None,
             proxy: Proxy::None,
             reconnect: ReconnectOptions::AfterFirstSuccess(10),
             security: SecurityOptions::None,
@@ -121,7 +121,7 @@ impl MqttOptions {
             client_id: id,
             ca: None,
             client_auth: None,
-            alpn: None,
+            //alpn: None,
             proxy: Proxy::None,
             reconnect: ReconnectOptions::AfterFirstSuccess(10),
             security: SecurityOptions::None,
@@ -166,14 +166,14 @@ impl MqttOptions {
         self.connection_timeout
     }
 
-    pub fn set_alpn(mut self, alpn: Vec<Vec<u8>>) -> Self {
-        self.alpn = Some(alpn);
-        self
-    }
+    //pub fn set_alpn(mut self, alpn: Vec<Vec<u8>>) -> Self {
+    //    self.alpn = Some(alpn);
+    //    self
+    //}
 
-    pub fn alpn(&self) -> Option<Vec<Vec<u8>>> {
-        self.alpn.clone()
-    }
+    //pub fn alpn(&self) -> Option<Vec<Vec<u8>>> {
+    //    self.alpn.clone()
+    //}
 
     /// Set number of seconds after which client should ping the broker
     /// if there is no other data exchange

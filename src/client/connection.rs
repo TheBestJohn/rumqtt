@@ -290,9 +290,9 @@ impl Connection {
 
         let builder = if let Some(ca) = self.mqttoptions.ca() {
             let mut builder = builder.add_certificate_authority(&ca);
-            if let Some(alpn) = self.mqttoptions.alpn() {
-                builder = builder.add_alpn_protocols(&alpn);
-            }
+            //if let Some(alpn) = self.mqttoptions.alpn() {
+            //    builder = builder.add_alpn_protocols(&alpn);
+            //}
 
             if let Some((cert, key)) = self.mqttoptions.client_auth() {
                 builder = builder.add_client_auth(&cert, &key);
